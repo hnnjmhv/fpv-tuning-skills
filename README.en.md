@@ -20,17 +20,19 @@ Every check covers PID and filters together. Combined proposals are supported. T
 
 ## Install
 
-Python 3.10+ is required. Raw logs also require a user-supplied firmware-compatible `blackbox_decode`. No upstream executables are redistributed.
+Python 3.10+ is required. The shared engine lives in `src/fpv_tune`; the installer copies that same source into the Chinese skill's runtime entrypoint. Raw logs also require a user-supplied firmware-compatible `blackbox_decode`. No upstream executables are redistributed.
 
 ```sh
 python -m venv .venv
 # Windows:
-.venv/Scripts/python -m pip install -e ".[dev,plots]"
+.venv/Scripts/python -m pip install ".[dev,plots]"
 .venv/Scripts/python tools/install_skills.py
 # Linux/macOS: replace .venv/Scripts/python with .venv/bin/python.
 ```
 
 Activate the virtual environment before invoking `fpv-tune`, or use its explicit executable path. The installer targets `$CODEX_HOME/skills`, or `~/.codex/skills` when unset. Use `--update` to replace existing skills with an external backup. Invoke `$穿越机调参` or `$fpv-drone-tuning`; use the language requested by the user. Clients requiring strict ASCII hyphen-case names can use the English entrypoint; the repository validator intentionally supports the existing Chinese name.
+
+The ordinary wheel installation above also works from non-ASCII checkout paths. For development, use an ASCII checkout path with `pip install -e ".[dev,plots]"`.
 
 ## Run
 

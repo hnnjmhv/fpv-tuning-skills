@@ -21,3 +21,5 @@ Synthetic tests establish software behavior. They do not establish the best PID 
 - CLI compilation is limited to the supported Betaflight 4.5.2 subset; 2026 firmware has documented differences but no executable plan adapter.
 - No numerical equivalence with PIDtoolbox or blanket compatibility of the old decoder is claimed.
 - Public CI tests synthetic data on Windows/Linux and Python 3.10/3.13. CI status is visible on the repository Actions page.
+
+The initial Windows 3.10 CI build exposed a locale-dependent editable-install error caused by a non-ASCII package source path. The engine was moved to the conventional ASCII `src/fpv_tune` layout while preserving both skill names. Installed Chinese skills receive a runtime copy from that canonical source, and command output uses UTF-8.

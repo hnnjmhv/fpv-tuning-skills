@@ -19,7 +19,7 @@ dev = ["pytest>=8,<10", "PyYAML>=6,<7"]
 fpv-tune = "fpv_tune.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["skills/穿越机调参/scripts"]
+where = ["src"]
 include = ["fpv_tune*"]
 
 [tool.setuptools.package-data]

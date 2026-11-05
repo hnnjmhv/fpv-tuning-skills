@@ -20,15 +20,17 @@
 
 ## 安装
 
-需要 Python 3.10+。原始 `.bbl/.bfl` 另需用户自行提供兼容固件的 `blackbox_decode`，仓库不分发 PIDtoolbox 或解码器二进制。
+需要 Python 3.10+。共享 Python 引擎在 `src/fpv_tune`，中文技能入口会在安装时带入一份运行代码；两者从同一来源生成。原始 `.bbl/.bfl` 另需用户自行提供兼容固件的 `blackbox_decode`，仓库不分发 PIDtoolbox 或解码器二进制。
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python -m pip install -e ".[dev,plots]"
+.\.venv\Scripts\python -m pip install ".[dev,plots]"
 .\.venv\Scripts\python tools/install_skills.py
 ```
 
 Linux/macOS 使用 `.venv/bin/python`。安装器将中英文技能放入 `$CODEX_HOME/skills`，未设置时使用 `~/.codex/skills`。更新已有同名技能加 `--update`，旧版本会备份到技能目录之外。英文技能使用安装后的 `fpv-tune` 命令；中文技能也带可直接调用的 `scripts/tune.py`。
+
+日常安装使用上面的普通 wheel 安装，兼容包含中文的目录。开发时可在 ASCII 路径的 checkout 使用 `pip install -e ".[dev,plots]"`。
 
 使用 `$穿越机调参` 或 `$fpv-drone-tuning`。技能以用户请求的语言回答；默认自动选择行为保持开启。
 

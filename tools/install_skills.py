@@ -13,6 +13,8 @@ from uuid import uuid4
 
 
 def main(argv=None) -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dest", type=Path, help="Skills directory; defaults to CODEX_HOME/skills or ~/.codex/skills")
     parser.add_argument("--update", action="store_true")
@@ -44,6 +46,9 @@ def main(argv=None) -> int:
         shutil.copytree(source, target, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         runtime = target / "scripts" / "runtime.json"
         runtime.parent.mkdir(exist_ok=True)
+        if target.name == "穿越机调参":
+            shutil.copytree(repo / "src" / "fpv_tune", runtime.parent / "fpv_tune",
+                            ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         runtime.write_text(json.dumps({"python": sys.executable,
                                       "command": [sys.executable, "-m", "fpv_tune.cli"]}, indent=2) + "\n", encoding="utf-8")
         print(f"Installed: {target}")
