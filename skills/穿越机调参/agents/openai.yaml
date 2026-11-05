@@ -1,0 +1,4 @@
+interface:
+  display_name: "穿越机调参"
+  short_description: "基于三次真实飞行黑盒，联合审查 PID、滤波与油门表现。"
+  default_prompt: "使用 $穿越机调参，按三次真实飞行检测流程分析 PID、滤波和推油门症状，并给出完整候选与回滚配置。"

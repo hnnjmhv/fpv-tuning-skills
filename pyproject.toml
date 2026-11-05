@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fpv-tuning-skills"
+version = "0.2.0"
+description = "Evidence-based Betaflight blackbox analysis and Chinese Codex skills"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["numpy>=1.24,<3", "pandas>=2,<4", "scipy>=1.10,<2"]
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.7,<4"]
+dev = ["pytest>=8,<10", "PyYAML>=6,<7"]
+
+[project.scripts]
+fpv-tune = "fpv_tune.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["skills/穿越机调参/scripts"]
+include = ["fpv_tune*"]
+
+[tool.setuptools.package-data]
+fpv_tune = ["*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

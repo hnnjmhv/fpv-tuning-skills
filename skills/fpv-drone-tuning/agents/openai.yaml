@@ -1,0 +1,4 @@
+interface:
+  display_name: "FPV Drone Tuning"
+  short_description: "Review PID and filters across three actual flight checks."
+  default_prompt: "Use $fpv-drone-tuning to review PID and filters with three actual flight checks and produce full candidate and rollback configurations."
