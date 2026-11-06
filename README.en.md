@@ -2,6 +2,8 @@
 
 [中文](README.md)
 
+[Downloads](https://github.com/hnnjmhv/fpv-tuning-skills/releases) · [Cross-platform CI](https://github.com/hnnjmhv/fpv-tuning-skills/actions)
+
 Chinese and English Codex skills for blackbox-based PID and filter review, powered by one offline Python engine. The default workflow uses **three actual flight checks**.
 
 The tool measures log timing, contiguous-window spectra, low-command spectra, throttle coverage, rate-tracking error, RPM field coverage, motor output limits and throttle events. It compares matched throttle/command strata and compiles reviewed proposals into full, differential and rollback CLI files.

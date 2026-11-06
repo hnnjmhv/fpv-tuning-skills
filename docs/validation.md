@@ -2,6 +2,8 @@
 
 ## Exercised / 已执行
 
+The local release suite contains 57 passing tests. The independent recheck reran 19 CLI invocations against the six original defect reproductions; all six were resolved. GitHub CI verifies both Windows/Linux on Python 3.10/3.13.
+
 - Deterministic synthetic tests cover contiguous FFT windows, tone RMS recovery, units, missing fields, Nyquist limits, header-based motor output bounds, RPM enable-vs-telemetry distinctions, and diagnostic-only response output.
 - Three distinct generated logs exercise baseline, recheck, final review, baseline comparison, duplicate-content refusal and an unevaluated acceptance checklist.
 - Plan tests cover matching profiles/firmware/configuration, existing evidence paths, supported ranges, enum mapping, simultaneous PID/filter proposals, simplified-controller consistency, full/differential output, explicit save and rollback.

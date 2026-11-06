@@ -27,3 +27,4 @@ sessions/
 *diff-all*.txt
 .skill-backups/
 skills/*/scripts/runtime.json
+skills/*/scripts/fpv_tune/

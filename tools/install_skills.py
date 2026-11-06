@@ -43,7 +43,7 @@ def main(argv=None) -> int:
                 raise ValueError("Unexpected backup target")
             target.rename(archive)
             print(f"Backed up: {archive}")
-        shutil.copytree(source, target, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(source, target, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "fpv_tune", "runtime.json"))
         runtime = target / "scripts" / "runtime.json"
         runtime.parent.mkdir(exist_ok=True)
         if target.name == "穿越机调参":

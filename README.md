@@ -2,6 +2,8 @@
 
 [English](README.en.md)
 
+[下载版本](https://github.com/hnnjmhv/fpv-tuning-skills/releases) · [跨平台测试](https://github.com/hnnjmhv/fpv-tuning-skills/actions)
+
 从黑盒记录到可审阅的 PID、滤波候选配置，默认完成 **三次真实飞行检测**。提供中文和英文技能入口，共用一个离线 Python 引擎。
 
 目前能做：日志分段、采样与缺帧检查、连续窗频谱、低杆量频谱、油门覆盖、PID 跟随误差、RPM 遥测覆盖、电机输出边界、油门事件、复飞分层比较，以及完整/差异/回滚 CLI。
